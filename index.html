@@ -1,761 +1,374 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rewa Construction Ug Ltd - Premium Concrete Blocks</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #0a3d62;         /* Deep blue */
-            --primary-dark: #08223a;    /* Darker blue */
-            --secondary: #38ada9;       /* Teal */
-            --accent: #f6b93b;          /* Warm gold */
-            --light: #f5f6fa;           /* Soft light gray */
-            --dark: #222f3e;            /* Deep navy */
-            --success: #78e08f;         /* Soft green */
-            --purple: #6c47ff;          /* Vivid purple for accents */
-            --warning: #ffbe76;         /* Soft orange */
-        }
+    <title>REWA Construction UG LTD. | Quality Building Solutions in Gulu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
+    <style>
         body {
             font-family: 'Inter', sans-serif;
-            color: var(--dark);
-            background: var(--light);
-            overflow-x: hidden;
         }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-            color: var(--primary-dark);
+        .hero-section {
+            background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
         }
-
-        .hero-gradient {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
-        }
-
-        .navbar {
-            transition: all 0.3s ease;
-            padding: 15px 0;
-        }
-
-        .navbar.scrolled {
-            padding: 8px 0;
-            background-color: rgba(255, 255, 255, 0.95) !important;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .navbar-dark.scrolled {
-            background-color: rgba(33, 37, 41, 0.95) !important;
-        }
-
-        .card-hover {
-            transition: all 0.3s ease;
-            border: none;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            height: 100%;
-        }
-
-        .card-hover:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn-primary {
-            background-color: var(--primary);
-            border-color: var(--primary);
-            padding: 10px 25px;
-            border-radius: 8px;
-            font-weight: 500;
-            transition: all 0.3s;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--primary-dark);
-            border-color: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-
-        .btn-outline-light:hover {
-            color: var(--primary);
-        }
-
-        .section-padding {
-            padding: 80px 0;
-        }
-
-        .icon-box {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 28px;
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .whatsapp-float {
-            position: fixed;
+        .section-header::after {
+            content: '';
+            display: block;
             width: 60px;
-            height: 60px;
-            bottom: 25px;
-            right: 25px;
-            background-color: #25d366;
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
+            height: 4px;
+            background-color: #D97706; /* amber-600 */
+            margin: 1rem auto 0;
+            border-radius: 2px;
         }
-
-        .whatsapp-float:hover {
-            background-color: #128C7E;
-            transform: scale(1.05);
+        .loading-spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            border-top: 4px solid #D97706;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
         }
-
-        .whatsapp-text {
-            position: fixed;
-            right: 90px;
-            bottom: 32px;
-            background: rgba(37, 211, 102, 0.9);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 500;
-            opacity: 0;
-            transition: opacity 0.3s;
-            pointer-events: none;
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
-
-        .whatsapp-float:hover + .whatsapp-text {
-            opacity: 1;
-        }
-
-        .contact-info-box {
-            padding: 25px;
-            border-radius: 12px;
-            background-color: white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            height: 100%;
-            transition: all 0.3s;
-        }
-
-        .contact-info-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .dark-mode .contact-info-box {
-            background-color: #2d3748;
-        }
-
-        .product-img-placeholder {
-            height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #f8f9fa;
-            border-radius: 8px;
-        }
-
-        .dark-mode {
-            background-color: #1a202c;
-            color: #e2e8f0;
-        }
-
-        .dark-mode .card {
-            background-color: #2d3748;
-            color: #e2e8f0;
-        }
-
-        .dark-mode .form-control {
-            background-color: #2d3748;
-            border-color: #4a5568;
-            color: #e2e8f0;
-        }
-
-        .dark-mode .contact-info-box {
-            background-color: #2d3748;
-        }
-
-        /* Animation classes */
-        .fade-in {
+        
+        /* Animation for sections */
+        .fade-in-section {
             opacity: 0;
             transform: translateY(20px);
-            animation: fadeInUp 0.6s ease forwards;
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .stagger-1 { animation-delay: 0.1s; }
-        .stagger-2 { animation-delay: 0.2s; }
-        .stagger-3 { animation-delay: 0.3s; }
-        .stagger-4 { animation-delay: 0.4s; }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .section-padding {
-                padding: 60px 0;
-            }
-            
-            .display-4 {
-                font-size: 2.5rem;
-            }
-            
-            .hero-buttons .btn {
-                display: block;
-                width: 100%;
-                margin-bottom: 10px;
-            }
-            
-            .navbar {
-                padding: 10px 0;
-            }
-            
-            .stat-number {
-                font-size: 2.5rem;
-            }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="logo.png" alt="Rewa Construction Logo" style="width: 40px; height: 40px; object-fit: contain;" class="me-2">
-                <span class="fw-bold fs-4">Rewa Construction</span>
-            </a>
-            
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="navbarContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#products">Products</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#services">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
-                
-                <div class="d-flex align-items-center ms-lg-3">
-                    <button id="theme-toggle" class="btn btn-outline-secondary ms-2">
-                        <i class="bi bi-sun-fill d-none"></i>
-                        <i class="bi bi-moon-fill"></i>
+<body class="bg-gray-50 text-gray-800" x-data="{ isMenuOpen: false }">
+
+    <!-- Navbar -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="#home" class="flex-shrink-0 flex items-center">
+                    <span class="font-extrabold text-2xl text-amber-600">REWA</span>
+                    <span class="text-gray-700 font-semibold text-xs ml-2 leading-tight">CONSTRUCTION<br>UG LTD.</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-600 hover:text-amber-600 transition-colors duration-300 font-medium">Home</a>
+                    <a href="#about" class="text-gray-600 hover:text-amber-600 transition-colors duration-300 font-medium">About</a>
+                    <a href="#products" class="text-gray-600 hover:text-amber-600 transition-colors duration-300 font-medium">Products</a>
+                    <a href="#gallery" class="text-gray-600 hover:text-amber-600 transition-colors duration-300 font-medium">Gallery</a>
+                    <a href="#idea-generator" class="text-gray-600 hover:text-amber-600 transition-colors duration-300 font-medium">Idea Generator</a>
+                    <a href="#contact" class="text-gray-600 hover:text-amber-600 transition-colors duration-300 font-medium">Contact</a>
+                </div>
+                <div class="flex md:hidden">
+                    <button @click="isMenuOpen = !isMenuOpen" type="button" class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-amber-500" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg x-show="!isMenuOpen" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                        <svg x-show="isMenuOpen" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
                     </button>
                 </div>
             </div>
+        </nav>
+        <!-- Mobile menu -->
+        <div x-show="isMenuOpen" @click.away="isMenuOpen = false" x-transition class="md:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a @click="isMenuOpen = false" href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-amber-600 hover:bg-gray-50">Home</a>
+                <a @click="isMenuOpen = false" href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-amber-600 hover:bg-gray-50">About</a>
+                <a @click="isMenuOpen = false" href="#products" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-amber-600 hover:bg-gray-50">Products</a>
+                <a @click="isMenuOpen = false" href="#gallery" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-amber-600 hover:bg-gray-50">Gallery</a>
+                <a @click="isMenuOpen = false" href="#idea-generator" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-amber-600 hover:bg-gray-50">Idea Generator</a>
+                <a @click="isMenuOpen = false" href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-amber-600 hover:bg-gray-50">Contact</a>
+            </div>
         </div>
-    </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-gradient pt-5">
-        <div class="container">
-            <div class="row min-vh-100 align-items-center">
-                <div class="col-lg-8 mx-auto text-center text-white py-5">
-                    <h1 class="display-4 fw-bold mb-4 fade-in">Premium Concrete Blocks</h1>
-                    <p class="lead mb-5 fade-in stagger-1">Building Uganda's future with high-quality, durable concrete blocks using modern technology and uncompromising standards</p>
-                    <div class="hero-buttons fade-in stagger-2">
-                        <a href="#products" class="btn btn-light btn-lg me-2 mb-2">View Products</a>
-                        <a href="#contact" class="btn btn-outline-light btn-lg mb-2">Get Quote</a>
+    <main>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero-section text-center py-24 md:py-40 lg:py-56 relative">
+            <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+            <div class="relative z-10 text-white max-w-4xl mx-auto px-4 fade-in-section is-visible">
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 drop-shadow-lg">
+                    Building the <span class="text-amber-500">Foundations of Tomorrow</span>
+                </h1>
+                <p class="text-lg md:text-xl font-medium mb-8 max-w-2xl mx-auto">
+                    REWA Construction UG LTD is your trusted partner for high-quality concrete products and construction solutions in Gulu and beyond.
+                </p>
+                <a href="#products" class="inline-block bg-amber-600 text-white font-bold py-4 px-10 rounded-lg shadow-lg hover:bg-amber-700 transition-transform duration-300 transform hover:scale-105">
+                    Explore Our Products
+                </a>
+            </div>
+        </section>
+
+        <!-- About/Why Choose Us Section -->
+        <section id="about" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center fade-in-section">
+                    <h2 class="section-header text-3xl md:text-4xl font-bold text-gray-900">Why Choose REWA?</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">We don't just supply materials; we build lasting relationships based on quality and trust.</p>
+                </div>
+                <div class="mt-16 grid md:grid-cols-3 gap-12 text-center">
+                    <div class="fade-in-section">
+                        <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-amber-100 text-amber-600">
+                             <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>
+                        </div>
+                        <h3 class="mt-5 text-xl font-semibold">Unmatched Quality</h3>
+                        <p class="mt-2 text-gray-600">Our products are manufactured to the highest standards, ensuring durability and strength for your projects.</p>
+                    </div>
+                    <div class="fade-in-section">
+                         <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-amber-100 text-amber-600">
+                            <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                        </div>
+                        <h3 class="mt-5 text-xl font-semibold">Local Expertise</h3>
+                        <p class="mt-2 text-gray-600">Based in Gulu City, we understand the local landscape and are committed to supporting our community's growth.</p>
+                    </div>
+                    <div class="fade-in-section">
+                        <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-amber-100 text-amber-600">
+                           <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                        </div>
+                        <h3 class="mt-5 text-xl font-semibold">Reliable Supply</h3>
+                        <p class="mt-2 text-gray-600">We pride ourselves on timely delivery and consistent product availability, keeping your project on schedule.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section id="about" class="section-padding bg-light">
-        <div class="container">
-            <div class="row justify-content-center mb-5">
-                <div class="col-lg-8 text-center">
-                    <h2 class="display-5 fw-bold mb-3">About Rewa Construction</h2>
-                    <p class="lead">A newly established firm committed to excellence in concrete block manufacturing</p>
+
+        <!-- Products Section -->
+        <section id="products" class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center fade-in-section">
+                    <h2 class="section-header text-3xl md:text-4xl font-bold text-gray-900">Our Core Products</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">The building blocks for any successful construction project.</p>
+                </div>
+
+                <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Product Cards -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 p-6 fade-in-section">
+                        <img src="https://placehold.co/600x400/eab308/ffffff?text=Hollow+Blocks" alt="Hollow Blocks" class="w-full h-40 object-cover rounded-md mb-4">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Hollow Blocks</h3>
+                        <p class="text-gray-600 text-sm mb-4">Lightweight and durable, perfect for non-load-bearing walls and partitions.</p>
+                        <ul class="list-disc list-inside text-gray-700 text-sm space-y-1">
+                            <li>4", 6", and 8" sizes available</li>
+                        </ul>
+                    </div>
+                     <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 p-6 fade-in-section">
+                        <img src="https://placehold.co/600x400/d97706/ffffff?text=Solid+Blocks" alt="Solid Blocks" class="w-full h-40 object-cover rounded-md mb-4">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Solid Blocks</h3>
+                        <p class="text-gray-600 text-sm mb-4">Maximum strength and durability for foundations and load-bearing structures.</p>
+                         <ul class="list-disc list-inside text-gray-700 text-sm space-y-1">
+                            <li>6" and 8" sizes available</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 p-6 fade-in-section">
+                        <img src="https://placehold.co/600x400/b45309/ffffff?text=Pavers" alt="Pavers" class="w-full h-40 object-cover rounded-md mb-4">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Pavers</h3>
+                        <p class="text-gray-600 text-sm mb-4">Create beautiful and resilient driveways, walkways, and patios.</p>
+                        <ul class="list-disc list-inside text-gray-700 text-sm space-y-1">
+                            <li>Multiple shapes & sizes</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 p-6 fade-in-section">
+                        <img src="https://placehold.co/600x400/92400e/ffffff?text=Kerb+Stones" alt="Kerb Stones" class="w-full h-40 object-cover rounded-md mb-4">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Kerb Stones</h3>
+                        <p class="text-gray-600 text-sm mb-4">Clean, durable edging for roads, gardens, and landscaping projects.</p>
+                         <ul class="list-disc list-inside text-gray-700 text-sm space-y-1">
+                            <li>Standard 70cm x 20cm</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h3 class="fw-bold mb-4">Our Mission</h3>
-                    <p class="mb-4">Rewa Construction Ug Ltd is dedicated to producing and supplying high-quality, durable concrete blocks that meet the demanding needs of Uganda's construction industry. We combine modern technology with rigorous quality standards to deliver building materials you can trust.</p>
-                    <p class="mb-5">Our customer-focused approach ensures that both individual builders and corporate clients receive reliable products and exceptional service for their construction projects.</p>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center fade-in-section">
+                    <h2 class="section-header text-3xl md:text-4xl font-bold text-gray-900">Project Gallery</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">See our products in action in real-world projects across the region.</p>
+                </div>
+                <div class="mt-16 grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <div class="overflow-hidden rounded-lg shadow-md fade-in-section"><img src="https://images.unsplash.com/photo-1519965253684-25916d5c6443?q=80&w=2070&auto=format&fit=crop" alt="Paver driveway" class="h-full w-full object-cover transform hover:scale-110 transition-transform duration-300"></div>
+                    <div class="overflow-hidden rounded-lg shadow-md fade-in-section col-span-1 md:col-span-2"><img src="https://images.unsplash.com/photo-1574945975955-3d84f1234e40?q=80&w=1974&auto=format&fit=crop" alt="House foundation with solid blocks" class="h-full w-full object-cover transform hover:scale-110 transition-transform duration-300"></div>
+                    <div class="overflow-hidden rounded-lg shadow-md fade-in-section col-span-1 md:col-span-2"><img src="https://images.unsplash.com/photo-1582006201730-4a2757243c98?q=80&w=2070&auto=format&fit=crop" alt="Landscaping with kerb stones" class="h-full w-full object-cover transform hover:scale-110 transition-transform duration-300"></div>
+                    <div class="overflow-hidden rounded-lg shadow-md fade-in-section"><img src="https://images.unsplash.com/photo-1559858712-c2834b6c373a?q=80&w=1964&auto=format&fit=crop" alt="Construction site with hollow blocks" class="h-full w-full object-cover transform hover:scale-110 transition-transform duration-300"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Idea Generator Section -->
+        <section id="idea-generator" class="py-20 bg-gray-50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in-section">
+                <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-amber-100 text-amber-600 mb-4">
+                     <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
+                </div>
+                <h2 class="section-header text-3xl md:text-4xl font-bold text-gray-900">Project Idea Generator</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">Unsure where to start? Describe your project, and our AI assistant will provide tailored suggestions and product recommendations.</p>
+
+                <div class="bg-white rounded-xl shadow-lg p-8 mt-12">
+                    <textarea id="project-input" rows="4" class="w-full p-4 rounded-lg border-2 border-gray-200 focus:outline-none focus:ring-2 focus:ring-amber-500 transition-colors duration-300 mb-4" placeholder="e.g., I want to build a secure perimeter wall for my home and a small patio for relaxing."></textarea>
                     
-                    <div class="row">
-                        <div class="col-sm-6 text-center mb-4">
-                            <div class="stat-number">100%</div>
-                            <p class="fw-medium">Quality Assured</p>
-                        </div>
-                        <div class="col-sm-6 text-center mb-4">
-                            <div class="stat-number">24/7</div>
-                            <p class="fw-medium">Customer Support</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-5 offset-lg-1">
-                    <div class="card border-0 shadow-lg card-hover">
-                        <div class="card-body text-center p-5">
-                            <i class="bi bi-shield-check feature-icon"></i>
-                            <h4 class="card-title fw-bold mb-3">Quality Guarantee</h4>
-                            <p class="card-text">Every block meets our strict quality standards and industry specifications.</p>
-                        </div>
+                    <button id="generate-button" class="bg-amber-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-amber-700 transition-all duration-300 transform hover:scale-105 inline-flex items-center">
+                        <span id="button-text">Generate Ideas</span>
+                        <div id="button-loader" class="hidden loading-spinner w-5 h-5 ml-2"></div>
+                    </button>
+                    
+                    <div id="response-output" class="text-left mt-8 p-6 bg-gray-50 rounded-lg border border-gray-200 hidden">
+                        <p id="generated-text" class="whitespace-pre-wrap text-gray-700"></p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Products Section -->
-    <section id="products" class="section-padding">
-        <div class="container">
-            <div class="row justify-content-center mb-5">
-                <div class="col-lg-8 text-center">
-                    <h2 class="display-5 fw-bold mb-3">Our Products</h2>
-                    <p class="lead">High-quality concrete blocks designed for durability and strength</p>
+        <!-- Location & Contact Section -->
+        <section id="contact" class="py-20 bg-gray-900 text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 fade-in-section">
+                <div class="text-center">
+                    <h2 class="section-header text-3xl md:text-4xl font-bold">Get in Touch</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-300">Visit us or give us a call. We're ready to help you build your vision.</p>
                 </div>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <div class="card card-hover">
-                        <div class="product-img-placeholder bg-primary bg-opacity-10">
-                            <i class="bi bi-square-fill text-primary" style="font-size: 64px;"></i>
-                        </div>
-                        <div class="card-body">
-                            <h3 class="card-title fw-bold">Standard Blocks</h3>
-                            <p class="card-text">Perfect for general construction, walls, and foundations. Available in multiple sizes.</p>
-                            <ul class="list-unstyled">
-                                <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-2"></i>High compressive strength</li>
-                                <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-2"></i>Weather resistant</li>
-                                <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-2"></i>Standard dimensions</li>
-                            </ul>
-                            <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#quoteModal" data-product="Standard Blocks">Request Quote</button>
-                        </div>
+                <div class="mt-16 grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.859668388563!2d32.28916381476569!3d2.744158997970868!4m6!3m5!1s0x1771a6c0f0a4a8c9%3A0x6b8f3b2f2b3b0b8c!8m2!3d2.744159!4d32.2913525!16s%2Fg%2F11f6j7x4j_" class="w-full h-96 border-0" allowfullscreen="" loading="lazy"></iframe>
                     </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-4">
-                    <div class="card card-hover">
-                        <div class="product-img-placeholder bg-success bg-opacity-10">
-                            <i class="bi bi-grid-3x3-gap-fill text-success" style="font-size: 64px;"></i>
+                    <div class="space-y-8">
+                        <div>
+                             <h3 class="text-2xl font-semibold text-amber-500 mb-2">Our Location</h3>
+                             <address class="text-gray-300 not-italic">
+                                Koro Paida Village, Pageya Parish<br>
+                                Laroo-Pece Division, Gulu City, Uganda
+                            </address>
                         </div>
-                        <div class="card-body">
-                            <h3 class="card-title fw-bold">Hollow Blocks</h3>
-                            <p class="card-text">Lightweight yet strong, ideal for partition walls and reducing construction weight.</p>
-                            <ul class="list-unstyled">
-                                <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-2"></i>Reduced weight</li>
-                                <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-2"></i>Better insulation</li>
-                                <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-2"></i>Cost effective</li>
-                            </ul>
-                            <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#quoteModal" data-product="Hollow Blocks">Request Quote</button>
+                         <div>
+                             <h3 class="text-2xl font-semibold text-amber-500 mb-2">Contact Details</h3>
+                             <p class="text-gray-300"><strong>Phone 1:</strong> <a href="tel:+256768806665" class="hover:underline">0768-806-665</a></p>
+                             <p class="text-gray-300"><strong>Phone 2:</strong> <a href="tel:+256753839787" class="hover:underline">0753-839-787</a></p>
+                             <p class="text-gray-300"><strong>Email:</strong> <a href="mailto:info@rewaconstructionug.com" class="hover:underline">info@rewaconstructionug.com</a></p>
                         </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-4">
-                    <div class="card card-hover">
-                        <div class="product-img-placeholder bg-purple bg-opacity-10">
-                            <i class="bi bi-puzzle-fill text-purple" style="font-size: 64px;"></i>
-                        </div>
-                        <div class="card-body">
-                            <h3 class="card-title fw-bold">Interlocking Blocks</h3>
-                            <p class="card-text">Advanced design for faster construction with superior structural integrity.</p>
-                            <ul class="list-unstyled">
-                                <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-2"></i>Easy installation</li>
-                                <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-2"></i>Superior strength</li>
-                                <li class="mb-1"><i class="bi bi-check-circle-fill text-success me-2"></i>Modern design</li>
-                            </ul>
-                            <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#quoteModal" data-product="Interlocking Blocks">Request Quote</button>
+                         <div class="flex space-x-4">
+                            <a href="#contact" class="bg-amber-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-amber-700 transition-transform duration-300 transform hover:scale-105">Call Us</a>
+                            <a href="#contact" class="bg-gray-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-gray-600 transition-transform duration-300 transform hover:scale-105">Email Us</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Services Section -->
-    <section id="services" class="section-padding bg-light">
-        <div class="container">
-            <div class="row justify-content-center mb-5">
-                <div class="col-lg-8 text-center">
-                    <h2 class="display-5 fw-bold mb-3">Our Services</h2>
-                    <p class="lead">Comprehensive solutions for all your construction needs</p>
-                </div>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-3">
-                    <div class="text-center">
-                        <div class="icon-box bg-primary bg-opacity-10 text-primary mb-4">
-                            <i class="bi bi-gear-fill"></i>
-                        </div>
-                        <h4 class="fw-bold mb-3">Custom Orders</h4>
-                        <p>Tailored block specifications to meet your project requirements</p>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-3">
-                    <div class="text-center">
-                        <div class="icon-box bg-success bg-opacity-10 text-success mb-4">
-                            <i class="bi bi-truck"></i>
-                        </div>
-                        <h4 class="fw-bold mb-3">Fast Delivery</h4>
-                        <p>Reliable delivery service across Uganda with flexible scheduling</p>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-3">
-                    <div class="text-center">
-                        <div class="icon-box bg-purple bg-opacity-10 text-purple mb-4">
-                            <i class="bi bi-check-circle"></i>
-                        </div>
-                        <h4 class="fw-bold mb-3">Quality Testing</h4>
-                        <p>Rigorous quality control and testing for every batch produced</p>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-3">
-                    <div class="text-center">
-                        <div class="icon-box bg-warning bg-opacity-10 text-warning mb-4">
-                            <i class="bi bi-headset"></i>
-                        </div>
-                        <h4 class="fw-bold mb-3">Expert Support</h4>
-                        <p>Technical consultation and support throughout your project</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section-padding">
-        <div class="container">
-            <div class="row justify-content-center mb-5">
-                <div class="col-lg-8 text-center">
-                    <h2 class="display-5 fw-bold mb-3">Contact Us</h2>
-                    <p class="lead">Ready to start your project? Get in touch with our team today</p>
-                </div>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="contact-info-box text-center">
-                        <div class="icon-box bg-primary bg-opacity-10 text-primary mb-4 mx-auto">
-                            <i class="bi bi-geo-alt"></i>
-                        </div>
-                        <h4 class="fw-bold mb-3">Location</h4>
-                        <p class="mb-3">Gulu, Uganda</p>
-                        <button class="btn btn-outline-primary btn-sm" onclick="openDirections()">
-                            <i class="bi bi-map me-1"></i> Get Directions
-                        </button>
-                    </div>
-                </div>
-                
-                <div class="col-md-4">
-                    <div class="contact-info-box text-center">
-                        <div class="icon-box bg-success bg-opacity-10 text-success mb-4 mx-auto">
-                            <i class="bi bi-telephone"></i>
-                        </div>
-                        <h4 class="fw-bold mb-3">Phone</h4>
-                        <p class="mb-3">+256 XXX XXX XXX</p>
-                        <a href="tel:+256XXXXXXXXX" class="btn btn-outline-success btn-sm">
-                            <i class="bi bi-telephone me-1"></i> Call Now
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="col-md-4">
-                    <div class="contact-info-box text-center">
-                        <div class="icon-box bg-purple bg-opacity-10 text-purple mb-4 mx-auto">
-                            <i class="bi bi-envelope"></i>
-                        </div>
-                        <h4 class="fw-bold mb-3">Email</h4>
-                        <p class="mb-3">info@rewaconstruction.ug</p>
-                        <a href="mailto:info@rewaconstruction.ug" class="btn btn-outline-purple btn-sm">
-                            <i class="bi bi-envelope me-1"></i> Send Email
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white py-5">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-4">
-                    <div class="d-flex align-items-center mb-4">
-                        <img src="logo.png" alt="Rewa Construction Logo" style="width: 40px; height: 40px; object-fit: contain;" class="me-3">
-                        <span class="fw-bold fs-5">Rewa Construction Ug Ltd</span>
-                    </div>
-                    <p class="mb-4">Your trusted partner for high-quality concrete blocks. Building Uganda's future with modern technology and uncompromising quality standards.</p>
-                </div>
-                
-                <div class="col-lg-2 col-md-4">
-                    <h5 class="fw-bold mb-4">Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#home" class="text-white text-decoration-none">Home</a></li>
-                        <li class="mb-2"><a href="#about" class="text-white text-decoration-none">About</a></li>
-                        <li class="mb-2"><a href="#products" class="text-white text-decoration-none">Products</a></li>
-                        <li class="mb-2"><a href="#services" class="text-white text-decoration-none">Services</a></li>
-                    </ul>
-                </div>
-                
-                <div class="col-lg-3 col-md-4">
-                    <h5 class="fw-bold mb-4">Contact Info</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><i class="bi bi-geo-alt me-2"></i> Gulu, Uganda</li>
-                        <li class="mb-2"><i class="bi bi-telephone me-2"></i> +256 XXX XXX XXX</li>
-                        <li class="mb-2"><i class="bi bi-envelope me-2"></i> info@rewaconstruction.ug</li>
-                    </ul>
-                </div>
-                
-                <div class="col-lg-3 col-md-4">
-                    <h5 class="fw-bold mb-4">Follow Us</h5>
-                    <div class="d-flex gap-3">
-                        <a href="#" class="text-white fs-5"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="text-white fs-5"><i class="bi bi-twitter"></i></a>
-                        <a href="#" class="text-white fs-5"><i class="bi bi-instagram"></i></a>
-                        <a href="#" class="text-white fs-5"><i class="bi bi-linkedin"></i></a>
-                    </div>
-                </div>
-            </div>
-            
-            <hr class="my-4">
-            
-            <div class="text-center">
-                <p class="mb-0">&copy; 2025 Rewa Construction Ug Ltd. All rights reserved.</p>
-            </div>
+    <footer class="bg-gray-800 text-gray-400 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 REWA Construction UG LTD. All rights reserved.</p>
+            <p class="text-sm mt-2">Website designed with care to showcase quality construction.</p>
         </div>
     </footer>
 
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/256XXXXXXXXX?text=Hello%20Rewa%20Construction!%20I'm%20interested%20in%20your%20concrete%20blocks." class="whatsapp-float" target="_blank">
-        <i class="bi bi-whatsapp"></i>
-    </a>
-    <span class="whatsapp-text">Chat with us</span>
-
-    <!-- Quote Modal -->
-    <div class="modal fade" id="quoteModal" tabindex="-1" aria-labelledby="quoteModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="quoteModalLabel">Request Quote</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p class="mb-4">Get a personalized quote for <span id="product-name" class="fw-bold text-primary"></span></p>
-                    <form>
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Your Name</label>
-                            <input type="text" class="form-control" id="name" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email Address</label>
-                            <input type="email" class="form-control" id="email" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="phone" class="form-label">Phone Number</label>
-                            <input type="tel" class="form-control" id="phone">
-                        </div>
-                        <div class="mb-3">
-                            <label for="quantity" class="form-label">Quantity Needed</label>
-                            <input type="number" class="form-control" id="quantity">
-                        </div>
-                        <div class="mb-3">
-                            <label for="requirements" class="form-label">Additional Requirements</label>
-                            <textarea class="form-control" id="requirements" rows="3"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100">Submit Quote Request</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    
     <script>
-        // Theme toggle functionality
-        const themeToggle = document.getElementById('theme-toggle');
-        const html = document.documentElement;
-        const sunIcon = themeToggle.querySelector('.bi-sun-fill');
-        const moonIcon = themeToggle.querySelector('.bi-moon-fill');
-        
-        // Check for saved theme preference or default to light mode
-        const currentTheme = localStorage.getItem('theme') || 'light';
-        
-        // Apply saved theme on page load
-        if (currentTheme === 'dark') {
-            html.classList.add('dark-mode');
-            sunIcon.classList.remove('d-none');
-            moonIcon.classList.add('d-none');
-        }
-        
-        themeToggle.addEventListener('click', function() {
-            html.classList.toggle('dark-mode');
-            
-            // Save theme preference and update icons
-            const isDark = html.classList.contains('dark-mode');
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
-            currentTheme = isDark ? 'dark' : 'light';
-            
-            if (isDark) {
-                sunIcon.classList.remove('d-none');
-                moonIcon.classList.add('d-none');
-            } else {
-                sunIcon.classList.add('d-none');
-                moonIcon.classList.remove('d-none');
-            }
-        });
-
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('mainNav');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a.nav-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-                
-                // Close mobile menu if open
-                const navbarToggler = document.querySelector('.navbar-toggler');
-                const navbarContent = document.getElementById('navbarContent');
-                if (navbarContent.classList.contains('show')) {
-                    navbarToggler.click();
+        // Intersection Observer for fade-in animations
+        const sections = document.querySelectorAll('.fade-in-section');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
                 }
             });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
         });
 
-        // Smooth scrolling for hero buttons
-        document.querySelectorAll('a[href^="#"]').forEach(link => {
-            if (link.getAttribute('href') !== '#') {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                });
+        // Gemini API Integration
+        document.getElementById('generate-button').addEventListener('click', async () => {
+            const projectInput = document.getElementById('project-input').value;
+            const responseOutput = document.getElementById('response-output');
+            const generatedText = document.getElementById('generated-text');
+            const generateButton = document.getElementById('generate-button');
+            const buttonText = document.getElementById('button-text');
+            const buttonLoader = document.getElementById('button-loader');
+            
+            if (!projectInput.trim()) {
+                generatedText.textContent = "Please describe your project to get an idea!";
+                responseOutput.classList.remove('hidden');
+                return;
             }
-        });
 
-        // Directions function
-        function openDirections() {
-            // Try to open Google Maps
-            const link = document.createElement('a');
-            link.href = 'https://www.google.com/maps/search/?api=1&query=Gulu,Uganda';
-            link.target = '_blank';
-            link.rel = 'noopener noreferrer';
+            // Show loading state
+            generateButton.disabled = true;
+            buttonText.textContent = 'Generating...';
+            buttonLoader.classList.remove('hidden');
+            responseOutput.classList.add('hidden');
             
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+            const products = `Hollow Blocks (4", 6", 8"), Solid Blocks (6", 8"), Pavers (Double S, Hexagon, Double T, Rectangular), Kerb stones (70cm x 20cm).`;
             
-            // Show backup info if needed
-            setTimeout(() => {
-                if (confirm('If the map didn\'t open, would you like to see our location details?')) {
-                    alert('Rewa Construction Ug Ltd\nLocation: Gulu, Uganda\nCoordinates: 2.7796° N, 32.2993° E\n\nYou can search for "Gulu, Uganda" in any map app on your device.');
-                }
-            }, 1000);
-        }
+            try {
+                const systemPrompt = "You are a professional and helpful construction consultant for REWA Construction UG LTD, located in Gulu, Uganda. Your goal is to provide creative project ideas and suggest suitable products from the company's catalog based on a customer's description. The response should be friendly, encouraging, and formatted in clean Markdown. Start with a friendly opening. Use bullet points for product suggestions. Do not mention your persona or that you are an AI model. Be concise and focus on the user's request. Keep in mind local context for Uganda where appropriate, but don't overemphasize it.";
+                const userQuery = `A customer wants to build: "${projectInput}". Based on this, provide a friendly project idea and suggest which REWA products are perfect. Only suggest from this list: ${products}. Also, provide one brief design suggestion.`;
 
-        // Quote modal functionality
-        const quoteModal = document.getElementById('quoteModal');
-        quoteModal.addEventListener('show.bs.modal', function(event) {
-            const button = event.relatedTarget;
-            const productName = button.getAttribute('data-product');
-            const modalTitle = quoteModal.querySelector('#product-name');
-            modalTitle.textContent = productName;
-        });
+                const apiKey = ""; // API key is handled by the environment
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
 
-        // Form submission
-        document.querySelectorAll('form').forEach(form => {
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
+                const payload = {
+                    contents: [{ parts: [{ text: userQuery }] }],
+                    systemInstruction: { parts: [{ text: systemPrompt }] },
+                };
                 
-                if (this.parentElement.classList.contains('modal-body')) {
-                    // Quote modal form
-                    alert('Quote request submitted successfully! We will send you a detailed quote within 24 hours.');
-                    const modal = bootstrap.Modal.getInstance(quoteModal);
-                    modal.hide();
+                // Exponential backoff for retries
+                let response;
+                let attempts = 0;
+                while (attempts < 5) {
+                    try {
+                        response = await fetch(apiUrl, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
+                        if (response.ok) break;
+                    } catch (error) {
+                         // This catches network errors
+                    }
+                    attempts++;
+                    await new Promise(res => setTimeout(res, 2 ** attempts * 100)); // 200ms, 400ms, 800ms...
+                }
+
+                if (!response || !response.ok) {
+                    throw new Error(`API call failed after several retries. Status: ${response?.status}`);
+                }
+
+                const result = await response.json();
+                const text = result?.candidates?.[0]?.content?.parts?.[0]?.text;
+
+                if (text) {
+                    generatedText.textContent = text;
                 } else {
-                    // Contact form
-                    alert('Thank you for your message! We will contact you soon.');
+                    generatedText.textContent = "Sorry, I couldn't generate an idea at the moment. The response was empty. Please try rephrasing your project description.";
                 }
-                
-                this.reset();
-            });
+
+            } catch (error) {
+                console.error('Error generating project idea:', error);
+                generatedText.textContent = "An error occurred. Please check your network connection and try again later.";
+            } finally {
+                // Hide loading state
+                generateButton.disabled = false;
+                buttonText.textContent = 'Generate Ideas';
+                buttonLoader.classList.add('hidden');
+                responseOutput.classList.remove('hidden');
+            }
         });
 
-        // Initialize tooltips
-        const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-        tooltipTriggerList.map(function(tooltipTriggerEl) {
-            return new bootstrap.Tooltip(tooltipTriggerEl);
-        });
     </script>
 </body>
 </html>
+
