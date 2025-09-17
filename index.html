@@ -316,7 +316,7 @@
                 const systemPrompt = "You are a professional and helpful construction consultant for REWA Construction UG LTD, located in Gulu, Uganda. Your goal is to provide creative project ideas and suggest suitable products from the company's catalog based on a customer's description. The response should be friendly, encouraging, and formatted in clean Markdown. Start with a friendly opening. Use bullet points for product suggestions. Do not mention your persona or that you are an AI model. Be concise and focus on the user's request. Keep in mind local context for Uganda where appropriate, but don't overemphasize it.";
                 const userQuery = `A customer wants to build: "${projectInput}". Based on this, provide a friendly project idea and suggest which REWA products are perfect. Only suggest from this list: ${products}. Also, provide one brief design suggestion.`;
 
-                const apiKey = ""; // API key is handled by the environment
+                const apiKey = "AIzaSyCiR62jV49RJSzBrS9mtSOQDPxEzk3Ct5E"; // API key is handled by the environment
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
 
                 const payload = {
