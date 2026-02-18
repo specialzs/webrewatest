@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>REWA Construction UG LTD | Gulu, Uganda</title>
+<meta name="description" content="Premium concrete products in Gulu, Uganda. Hollow blocks, solid blocks, pavers & kerb stones. Call 0768-806-665.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+/* ── THEME TOKENS ─────────────────────────────── */
+:root{
+  --amber:#E8820C;--amber-l:#F5A83A;--amber-pale:#FEF3E2;
+  --bg:#FAF7F2;--bg2:#F0EBE3;--bg3:#E8E0D5;
+  --card:#FFFFFF;--card2:#F5F0E8;
+  --txt:#1C1612;--txt2:#5C4A35;--txt3:#8C7B6B;
+  --bdr:rgba(92,74,53,0.15);
+  --nav-bg:rgba(250,247,242,0.93);
+  --nav-txt:#1C1612;--nav-link:rgba(28,22,18,0.6);
+  --shadow:rgba(0,0,0,0.07);
+}
+[data-theme="dark"]{
+  --bg:#0E0C0A;--bg2:#1A1713;--bg3:#2A2420;
+  --card:#1A1713;--card2:#2A2420;
+  --txt:#F5F0E8;--txt2:#C4B49A;--txt3:#7A6A5A;
+  --bdr:rgba(232,130,12,0.15);
+  --nav-bg:rgba(14,12,10,0.93);
+  --nav-txt:#F5F0E8;--nav-link:rgba(245,240,232,0.6);
+  --shadow:rgba(0,0,0,0.4);
+}
+
+/* ── BASE ─────────────────────────────────────── */
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);overflow-x:hidden;transition:background .3s,color .3s}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+
+/* ── CURSOR ───────────────────────────────────── */
+.cur,.cur-ring{position:fixed;top:0;left:0;pointer-events:none;border-radius:50%;transform:translate(-50%,-50%)}
+.cur{width:8px;height:8px;background:var(--amber);z-index:9999}
+.cur-ring{width:34px;height:34px;border:1.5px solid var(--amber);z-index:9998;opacity:.45;transition:opacity .3s}
+@media(hover:none){.cur,.cur-ring{display:none}}
+
+/* ── SCROLL BAR ───────────────────────────────── */
+.sbar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--amber),var(--amber-l));z-index:9999}
+
+/* ── NAVBAR ───────────────────────────────────── */
+#nav{position:fixed;top:0;left:0;right:0;z-index:200;height:72px;padding:0 5%;display:flex;align-items:center;justify-content:space-between;transition:background .4s,box-shadow .4s}
+#nav.scrolled{background:var(--nav-bg);backdrop-filter:blur(20px);box-shadow:0 1px 0 var(--bdr)}
+.nlogo{display:flex;align-items:center;gap:12px}
+.nlogo img{height:42px;width:auto}
+.ltxt{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;color:var(--nav-txt);letter-spacing:.05em;line-height:1.1;transition:color .3s}
+.ltxt small{display:block;font-family:'DM Sans',sans-serif;font-size:.62rem;font-weight:300;letter-spacing:.18em;color:var(--amber);text-transform:uppercase}
+.nlinks{display:flex;align-items:center;gap:30px}
+.nlinks a{font-size:.8rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--nav-link);position:relative;transition:color .2s}
+.nlinks a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--amber);transition:width .3s}
+.nlinks a:hover{color:var(--nav-txt)}.nlinks a:hover::after{width:100%}
+.ncta{background:var(--amber)!important;color:#fff!important;padding:8px 17px;border-radius:4px;font-weight:600!important}
+.ncta::after{display:none!important}
+.ncta:hover{background:var(--amber-l)!important}
+/* theme toggle btn */
+.tbtn{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--bdr);background:var(--card2);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s;font-size:1rem;flex-shrink:0}
+.tbtn:hover{border-color:var(--amber);transform:rotate(20deg)}
+/* hamburger */
+.hbg{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hbg span{width:24px;height:2px;background:var(--nav-txt);border-radius:2px;transition:all .3s;display:block}
+.hbg.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hbg.open span:nth-child(2){opacity:0}
+.hbg.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobm{position:fixed;top:72px;left:0;right:0;background:var(--nav-bg);backdrop-filter:blur(20px);padding:18px 5%;display:none;flex-direction:column;gap:2px;z-index:199;border-top:1px solid var(--bdr)}
+.mobm.open{display:flex}
+.mobm a{font-size:1rem;font-weight:500;color:var(--txt2);padding:11px 0;border-bottom:1px solid var(--bdr);transition:color .2s}
+.mobm a:last-child{border-bottom:none}
+.mobm a:hover{color:var(--amber)}
+
+/* ── HERO ─────────────────────────────────────── */
+#hero{min-height:100vh;background:#0E0C0A;position:relative;display:flex;align-items:center;overflow:hidden}
+.hbg-img{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2076&auto=format&fit=crop');background-size:cover;background-position:center;opacity:.18;animation:szoom 20s ease-in-out infinite alternate}
+@keyframes szoom{from{transform:scale(1.05)}to{transform:scale(1.12)}}
+.hov{position:absolute;inset:0;background:linear-gradient(135deg,rgba(14,12,10,.98) 0%,rgba(42,36,32,.6) 60%,transparent 100%)}
+.hc{position:relative;z-index:2;padding:140px 8% 80px;max-width:880px}
+.htag{display:inline-flex;align-items:center;gap:8px;background:rgba(232,130,12,.12);border:1px solid rgba(232,130,12,.3);color:var(--amber-l);font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;padding:6px 14px;border-radius:100px;margin-bottom:28px;opacity:0;animation:fup .8s .2s forwards}
+.dot{width:6px;height:6px;background:var(--amber);border-radius:50%;animation:bl 2s infinite}
+@keyframes bl{0%,100%{opacity:1}50%{opacity:.3}}
+.hh1{font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem,9vw,9rem);line-height:.9;color:#fff;opacity:0;animation:fup .8s .4s forwards}
+.hh1 .a{color:var(--amber)}.hh1 .i{font-family:'DM Serif Display',serif;font-style:italic;color:var(--amber-l)}
+.hsub{font-size:1rem;color:rgba(255,255,255,.55);font-weight:300;line-height:1.75;margin-top:22px;max-width:500px;opacity:0;animation:fup .8s .6s forwards}
+.hacts{display:flex;gap:12px;flex-wrap:wrap;margin-top:40px;opacity:0;animation:fup .8s .8s forwards}
+.hstats{display:flex;gap:40px;margin-top:56px;opacity:0;animation:fup .8s 1s forwards}
+.stn{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;color:var(--amber);line-height:1}
+.stl{font-size:.68rem;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.1em;margin-top:2px}
+@keyframes fup{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── BUTTONS ─────────────────────────────────── */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 30px;border-radius:4px;font-family:inherit;font-weight:600;font-size:.9rem;cursor:pointer;border:none;transition:all .25s;letter-spacing:.02em}
+.bpri{background:var(--amber);color:#fff}
+.bpri:hover{background:var(--amber-l);transform:translateY(-2px);box-shadow:0 10px 36px rgba(232,130,12,.35)}
+.bout{background:transparent;color:rgba(255,255,255,.75);border:1.5px solid rgba(255,255,255,.2)}
+.bout:hover{border-color:var(--amber);color:var(--amber)}
+.bdk{background:var(--bg3);color:var(--txt);border:1.5px solid var(--bdr)}
+.bdk:hover{background:var(--amber);color:#fff;border-color:var(--amber)}
+
+/* ── MARQUEE ─────────────────────────────────── */
+.mqw{background:var(--amber);overflow:hidden;padding:12px 0}
+.mqt{display:flex;gap:52px;animation:mq 25s linear infinite;white-space:nowrap}
+.mqt span{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.1em;color:rgba(255,255,255,.85);flex-shrink:0}
+.mqt .sep{color:rgba(255,255,255,.35)}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ── SECTION COMMONS ─────────────────────────── */
+section{padding:96px 5%}
+.slbl{display:inline-flex;align-items:center;gap:10px;font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:16px}
+.slbl::before{content:'';width:24px;height:2px;background:var(--amber)}
+.stitle{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,5vw,4rem);line-height:.95;letter-spacing:-.01em;color:var(--txt)}
+.stitle.w{color:#fff}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.25,.46,.45,.94),transform .7s cubic-bezier(.25,.46,.45,.94)}
+.rv.vis{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+/* ── ABOUT ───────────────────────────────────── */
+#about{background:var(--card)}
+.abgrid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;max-width:1200px;margin:0 auto}
+.abimgw{position:relative}
+.abimg{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:6px}
+.abbdg{position:absolute;bottom:-18px;right:-18px;width:126px;height:126px;background:var(--amber);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 18px 48px rgba(232,130,12,.4)}
+.abbdg .n{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;color:#fff;line-height:1}
+.abbdg .l{font-size:.6rem;color:rgba(255,255,255,.85);text-align:center;line-height:1.4}
+.abdesc{font-size:.98rem;color:var(--txt2);line-height:1.8;margin-top:22px}
+.abpill{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px}
+.pill{padding:16px;border:1px solid var(--bdr);border-radius:8px;background:var(--bg2);transition:all .3s;cursor:default}
+.pill:hover{border-color:var(--amber);transform:translateY(-2px)}
+[data-theme="dark"] .pill:hover{background:rgba(232,130,12,.06)}
+[data-theme="light"] .pill:hover{background:var(--amber-pale)}
+.pilico{font-size:1.3rem;margin-bottom:6px}
+.piltit{font-weight:700;font-size:.86rem;margin-bottom:3px;color:var(--txt)}
+.pildsc{font-size:.78rem;color:var(--txt3);line-height:1.5}
+
+/* ── PRODUCTS ────────────────────────────────── */
+#products{background:var(--bg2)}
+.phdr{display:flex;justify-content:space-between;align-items:flex-end;max-width:1200px;margin:0 auto 44px;flex-wrap:wrap;gap:18px}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:1200px;margin:0 auto}
+/* ─── PRODUCT CARD — info always visible ──────── */
+.pcard{border-radius:12px;overflow:hidden;background:var(--card);border:1px solid var(--bdr);transition:all .35s;cursor:pointer;display:flex;flex-direction:column}
+.pcard:hover{transform:translateY(-6px);box-shadow:0 18px 48px var(--shadow);border-color:var(--amber)}
+.pimgw{position:relative;overflow:hidden;aspect-ratio:4/3;flex-shrink:0}
+.pimgw img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.pcard:hover .pimgw img{transform:scale(1.07)}
+.pbdg{position:absolute;top:10px;left:10px;background:var(--amber);color:#fff;font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 9px;border-radius:100px;white-space:nowrap}
+.pbody{padding:18px;flex:1;display:flex;flex-direction:column}
+.pname{font-family:'Bebas Neue',sans-serif;font-size:1.45rem;color:var(--txt);line-height:1;margin-bottom:5px}
+.psizes{font-size:.75rem;color:var(--amber);font-weight:600;margin-bottom:8px;letter-spacing:.04em}
+.pdesc{font-size:.8rem;color:var(--txt2);line-height:1.6;margin-bottom:12px;flex:1}
+.parrow{display:inline-flex;align-items:center;gap:5px;font-size:.72rem;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:.1em;transition:gap .2s;margin-top:auto}
+.pcard:hover .parrow{gap:10px}
+
+/* ── CALCULATOR ──────────────────────────────── */
+#calculator{background:var(--bg)}
+.cwrap{max-width:940px;margin:52px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.clbl{display:block;font-size:.73rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--txt3);margin-bottom:7px}
+.cinp{width:100%;padding:12px 14px;background:var(--card);border:1.5px solid var(--bdr);border-radius:6px;font-size:.92rem;font-family:inherit;color:var(--txt);transition:border-color .2s,box-shadow .2s;margin-bottom:16px}
+.cinp:focus{outline:none;border-color:var(--amber);box-shadow:0 0 0 3px rgba(232,130,12,.1)}
+.cbtn{width:100%;padding:14px;background:var(--txt);color:var(--bg);border:none;border-radius:6px;font-size:.92rem;font-weight:700;font-family:inherit;cursor:pointer;transition:all .25s;display:flex;align-items:center;justify-content:center;gap:7px}
+.cbtn:hover{background:var(--amber);transform:translateY(-1px)}
+.cres{background:var(--bg3);border-radius:12px;padding:30px;border:1px solid var(--bdr);display:none}
+.cres.show{display:block}
+.ritem{margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--bdr)}
+.ritem:last-of-type{margin-bottom:0;padding-bottom:0;border-bottom:none}
+.rlbl{font-size:.68rem;color:var(--txt3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:3px}
+.rval{font-family:'Bebas Neue',sans-serif;font-size:2.1rem;color:var(--amber);line-height:1}
+.rsub{font-size:.72rem;color:var(--txt3);margin-top:2px}
+.rtip{margin-top:20px;padding:13px;background:rgba(232,130,12,.07);border:1px solid rgba(232,130,12,.2);border-radius:8px;font-size:.78rem;color:var(--txt2);line-height:1.6}
+
+/* ── AI SECTION ──────────────────────────────── */
+#ai{background:var(--bg2)}
+.aiwrap{max-width:660px;margin:0 auto;text-align:center}
+.aibox{margin-top:42px;background:var(--card);border:1.5px solid var(--bdr);border-radius:14px;overflow:hidden;text-align:left;transition:border-color .3s}
+.aibox:focus-within{border-color:var(--amber)}
+.aitaw{padding:20px}
+.aita{width:100%;background:transparent;border:none;resize:none;font-family:inherit;font-size:.92rem;color:var(--txt);line-height:1.7;min-height:88px}
+.aita:focus{outline:none}
+.aita::placeholder{color:var(--txt3)}
+.aifoot{padding:13px 20px;background:var(--bg2);border-top:1px solid var(--bdr);display:flex;align-items:center;justify-content:space-between;gap:10px}
+.aihint{font-size:.72rem;color:var(--txt3)}
+.aisend{background:var(--amber);color:#fff;border:none;padding:9px 20px;border-radius:6px;font-family:inherit;font-weight:600;font-size:.82rem;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:6px}
+.aisend:hover{background:var(--amber-l)}
+.aisend:disabled{opacity:.5;cursor:not-allowed}
+.airsp{padding:0 20px;max-height:0;overflow:hidden;transition:max-height .5s,padding .3s}
+.airsp.show{max-height:480px;padding:20px;overflow-y:auto;border-top:1px solid var(--bdr)}
+.airspin{font-size:.88rem;color:var(--txt2);line-height:1.8}
+.airspin strong{color:var(--amber);font-weight:600}
+.airspin p{margin-bottom:10px}
+.spin{width:14px;height:14px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spinn .8s linear infinite;display:none}
+.aisend.loading .spin{display:block}
+.aisend.loading .stxt{display:none}
+@keyframes spinn{to{transform:rotate(360deg)}}
+
+/* ── TESTIMONIALS ────────────────────────────── */
+#testimonials{background:var(--card)}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1200px;margin:48px auto 0}
+.tcard{padding:26px;border:1px solid var(--bdr);border-radius:12px;background:var(--bg);transition:all .3s}
+.tcard:hover{transform:translateY(-4px);box-shadow:0 14px 44px var(--shadow);border-color:var(--amber)}
+.stars{display:flex;gap:2px;margin-bottom:13px}
+.star{color:var(--amber);font-size:.82rem}
+.ttxt{font-size:.88rem;color:var(--txt2);line-height:1.7;margin-bottom:18px;font-style:italic}
+.tauth{display:flex;align-items:center;gap:10px}
+.tav{width:38px;height:38px;background:var(--amber);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.78rem;color:#fff;flex-shrink:0}
+.tnm{font-weight:700;font-size:.86rem;color:var(--txt)}
+.trl{font-size:.72rem;color:var(--txt3);margin-top:1px}
+
+/* ── FAQ ─────────────────────────────────────── */
+#faq{background:var(--bg2)}
+.fwrap{max-width:720px;margin:48px auto 0}
+.fit{border-bottom:1px solid var(--bdr)}
+.fq{display:flex;justify-content:space-between;align-items:center;padding:19px 0;cursor:pointer;font-weight:600;font-size:.93rem;color:var(--txt);transition:color .2s;gap:14px}
+.fq:hover{color:var(--amber)}
+.fico{width:25px;height:25px;flex-shrink:0;border-radius:50%;border:1.5px solid var(--txt3);display:flex;align-items:center;justify-content:center;font-size:.95rem;line-height:1;transition:transform .3s,background .3s,border-color .3s,color .3s;color:var(--txt3)}
+.fit.open .fico{transform:rotate(45deg);background:var(--amber);border-color:var(--amber);color:#fff}
+.fa{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;font-size:.86rem;color:var(--txt2);line-height:1.8}
+.fit.open .fa{max-height:200px;padding-bottom:16px}
+
+/* ── CONTACT ─────────────────────────────────── */
+#contact{background:var(--bg3)}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:60px;max-width:1200px;margin:48px auto 0;align-items:start}
+.cii{display:flex;gap:13px;align-items:flex-start;margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--bdr)}
+.cii:last-of-type{border-bottom:none;margin-bottom:0}
+.ciico{width:40px;height:40px;flex-shrink:0;background:rgba(232,130,12,.1);border:1px solid rgba(232,130,12,.2);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.95rem}
+.cilbl{font-size:.65rem;color:var(--txt3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:2px}
+.cival{color:var(--txt2);font-size:.88rem;line-height:1.5}
+.cival a{color:var(--txt2);transition:color .2s}
+.cival a:hover{color:var(--amber)}
+.cacts{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
+.fgrp{margin-bottom:16px}
+.flbl{display:block;font-size:.7rem;font-weight:700;color:var(--txt3);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+.fctrl{width:100%;padding:12px 14px;background:var(--card);border:1.5px solid var(--bdr);border-radius:6px;font-family:inherit;font-size:.9rem;color:var(--txt);transition:border-color .2s;resize:none}
+.fctrl:focus{outline:none;border-color:var(--amber)}
+.fctrl::placeholder{color:var(--txt3)}
+.fsub{width:100%;padding:14px;background:var(--amber);color:#fff;border:none;border-radius:6px;font-family:inherit;font-weight:700;font-size:.9rem;cursor:pointer;transition:all .25s;letter-spacing:.03em}
+.fsub:hover{background:var(--amber-l);transform:translateY(-1px)}
+.fok{display:none;margin-top:12px;padding:12px 14px;background:rgba(16,185,129,.07);border:1px solid rgba(16,185,129,.22);border-radius:6px;color:#10B981;font-size:.8rem;align-items:center;gap:6px}
+.fok.show{display:flex}
+.mapw{margin-top:28px;border-radius:8px;overflow:hidden;border:1px solid var(--bdr)}
+
+/* ── FOOTER ──────────────────────────────────── */
+footer{background:var(--bg2);padding:32px 5%;border-top:1px solid var(--bdr)}
+.fin{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.fcopy{font-size:.75rem;color:var(--txt3)}
+.flinks{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.flinks a{font-size:.75rem;color:var(--txt3);transition:color .2s}
+.flinks a:hover{color:var(--amber)}
+.admlnk{font-size:.7rem;padding:5px 12px;border:1px solid var(--bdr);border-radius:4px;color:var(--txt3);transition:all .2s}
+.admlnk:hover{border-color:var(--amber);color:var(--amber)}
+
+/* ── WHATSAPP ────────────────────────────────── */
+.wa{position:fixed;bottom:26px;right:26px;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 26px rgba(37,211,102,.4);z-index:150;transition:transform .2s;animation:wap 3s infinite}
+.wa:hover{transform:scale(1.1)}
+@keyframes wap{0%,100%{box-shadow:0 8px 26px rgba(37,211,102,.4)}50%{box-shadow:0 8px 34px rgba(37,211,102,.6),0 0 0 9px rgba(37,211,102,.07)}}
+
+/* ── RESPONSIVE ──────────────────────────────── */
+@media(max-width:1024px){
+  .pgrid{grid-template-columns:repeat(2,1fr)}
+  .tgrid{grid-template-columns:repeat(2,1fr)}
+  .abgrid{grid-template-columns:1fr;gap:40px}
+  .abimgw{max-width:420px}
+  .cwrap{grid-template-columns:1fr}
+  .cgrid{grid-template-columns:1fr;gap:40px}
+}
+@media(max-width:768px){
+  .nlinks{display:none}
+  .hbg{display:flex}
+  section{padding:68px 5%}
+  .hc{padding:120px 5% 56px}
+  .hstats{gap:26px}
+  .stn{font-size:2.1rem}
+  .pgrid{grid-template-columns:1fr 1fr}
+  .tgrid{grid-template-columns:1fr}
+  .abpill{grid-template-columns:1fr}
+  .abbdg{width:104px;height:104px;bottom:-12px;right:-8px}
+  .abbdg .n{font-size:2.2rem}
+}
+@media(max-width:480px){
+  .pgrid{grid-template-columns:1fr}
+  .hacts,.cacts{flex-direction:column}
+  .hacts .btn,.cacts .btn{width:100%;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<div class="cur" id="cur"></div>
+<div class="cur-ring" id="curring"></div>
+<div class="sbar" id="sbar"></div>
+
+<!-- WhatsApp -->
+<a href="https://wa.me/256768806665?text=Hello%20REWA%20Construction!" target="_blank" class="wa" aria-label="WhatsApp">
+  <svg width="25" height="25" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- NAVBAR -->
+<nav id="nav">
+  <a href="#hero" class="nlogo">
+    <img src="https://raw.githubusercontent.com/specialzs/webrewatest/main/logo.png" alt="REWA">
+    <div class="ltxt">REWA Construction<small>Gulu, Uganda</small></div>
+  </a>
+  <div class="nlinks">
+    <a href="#about">About</a>
+    <a href="#products">Products</a>
+    <a href="#calculator">Calculator</a>
+    <a href="#ai">AI Guide</a>
+    <a href="#testimonials">Reviews</a>
+    <a href="#contact" class="ncta">Contact Us</a>
+    <button class="tbtn" id="tbtn" title="Toggle theme">☀️</button>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px">
+    <button class="tbtn" id="tbtnm" title="Toggle theme" style="display:none">☀️</button>
+    <div class="hbg" id="hbg"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobm" id="mobm">
+  <a href="#about">About</a>
+  <a href="#products">Products</a>
+  <a href="#calculator">Calculator</a>
+  <a href="#ai">AI Project Guide</a>
+  <a href="#testimonials">Reviews</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact">Contact</a>
+  <a href="admin.html" style="color:var(--amber);font-weight:600">⚙️ Admin Panel</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hbg-img"></div>
+  <div class="hov"></div>
+  <div class="hc">
+    <div class="htag"><span class="dot"></span>Gulu City's Premier Concrete Supplier</div>
+    <h1 class="hh1">BUILD<br><span class="a">STRONG.</span><br><span class="i">Build Right.</span></h1>
+    <p class="hsub">REWA Construction UG LTD supplies premium hollow blocks, solid blocks, pavers, and kerb stones to contractors and homeowners across Northern Uganda.</p>
+    <div class="hacts">
+      <a href="#products" class="btn bpri">View Products <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="#contact" class="btn bout">Get a Quote</a>
+    </div>
+   div class="hstats">
+    <div><div class="stn" id="stat1" data-count="500">500</div><div class="stl" id="stat1l">Projects Done</div></div>
+    <div><div class="stn" id="stat2" data-count="4">4</div><div class="stl" id="stat2l">Product Lines</div></div>
+    <div><div class="stn" id="stat3" data-count="7">7</div><div class="stl" id="stat3l">Days a Week</div></div>
+</div>
+</section>
+
+<!-- MARQUEE -->
+<div class="mqw"><div class="mqt">
+  <span>Hollow Blocks</span><span class="sep">✦</span><span>Solid Blocks</span><span class="sep">✦</span>
+  <span>Interlocking Pavers</span><span class="sep">✦</span><span>Kerb Stones</span><span class="sep">✦</span>
+  <span>Gulu City</span><span class="sep">✦</span><span>Northern Uganda</span><span class="sep">✦</span>
+  <span>Hollow Blocks</span><span class="sep">✦</span><span>Solid Blocks</span><span class="sep">✦</span>
+  <span>Interlocking Pavers</span><span class="sep">✦</span><span>Kerb Stones</span><span class="sep">✦</span>
+  <span>Gulu City</span><span class="sep">✦</span><span>Northern Uganda</span><span class="sep">✦</span>
+</div></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="abgrid">
+    <div class="abimgw rv">
+      <img class="abimg" src="https://images.unsplash.com/photo-1565008576549-57569a49371d?q=80&w=900&auto=format&fit=crop" alt="Construction in Gulu">
+      <div class="abbdg"><div class="n">5+</div><div class="l">Years of<br>Excellence</div></div>
+    </div>
+    <div class="rv d2">
+      <div class="slbl">Why Choose Us</div>
+      <h2 class="stitle">The Backbone of<br>Gulu's Growth</h2>
+      <p class="abdesc">From family homes to commercial developments, REWA Construction UG LTD has been delivering premium-quality concrete products to builders across Northern Uganda. We combine local expertise with rigorous quality standards.</p>
+      <div class="abpill">
+        <div class="pill"><div class="pilico">🏆</div><div class="piltit">Unmatched Quality</div><div class="pildsc">Every block tested to international strength standards.</div></div>
+        <div class="pill"><div class="pilico">📍</div><div class="piltit">Local Expertise</div><div class="pildsc">Deep roots in Gulu City. We know the terrain.</div></div>
+        <div class="pill"><div class="pilico">🚛</div><div class="piltit">Reliable Delivery</div><div class="pildsc">On-time supply to keep your project on schedule.</div></div>
+        <div class="pill"><div class="pilico">💬</div><div class="piltit">Expert Guidance</div><div class="pildsc">Free consultation on materials and quantities.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="phdr rv">
+    <div><div class="slbl">What We Offer</div><h2 class="stitle">Our Products</h2></div>
+    <p style="color:var(--txt3);max-width:270px;font-size:.86rem;line-height:1.7">Premium concrete products built for Ugandan construction.</p>
+  </div>
+  <div class="pgrid" id="pgrid">
+    <div class="pcard rv">
+      <div class="pimgw"><img src="https://hockchuanseng.com/cdn/shop/files/CementHollowBlocks_8cc94174-8102-45ea-abc0-0b2b91d3a364.jpg?v=1721977628&width=600" alt="Hollow Blocks" loading="lazy"><span class="pbdg">Most Popular</span></div>
+      <div class="pbody"><div class="pname">Hollow Blocks</div><div class="psizes">Available: 4" · 6" · 8"</div><div class="pdesc">Lightweight yet durable. Perfect for internal walls, partitions and non-load-bearing structures.</div><span class="parrow">View details <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+    </div>
+    <div class="pcard rv d1">
+      <div class="pimgw"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop" alt="Solid Blocks" loading="lazy"><span class="pbdg">Max Strength</span></div>
+      <div class="pbody"><div class="pname">Solid Blocks</div><div class="psizes">Available: 6" · 8"</div><div class="pdesc">Maximum strength for foundations, perimeter walls and all load-bearing structures.</div><span class="parrow">View details <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+    </div>
+    <div class="pcard rv d2">
+      <div class="pimgw"><img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=800&auto=format&fit=crop" alt="Pavers" loading="lazy"><span class="pbdg">Driveways & Patios</span></div>
+      <div class="pbody"><div class="pname">Interlocking Pavers</div><div class="psizes">40mm · 50mm · 60mm</div><div class="pdesc">Beautiful, durable surface solutions for driveways, parking lots, patios and walkways.</div><span class="parrow">View details <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+    </div>
+    <div class="pcard rv d3">
+      <div class="pimgw"><img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=800&auto=format&fit=crop" alt="Kerb Stones" loading="lazy"><span class="pbdg">Edges & Borders</span></div>
+      <div class="pbody"><div class="pname">Kerb Stones</div><div class="psizes">Standard & Heavy Duty</div><div class="pdesc">Define edges cleanly. Ideal for road borders, driveway edging and garden boundaries.</div><span class="parrow">View details <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section id="calculator">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="rv"><div class="slbl">Planning Tool</div><h2 class="stitle">Block Calculator</h2><p style="margin-top:13px;color:var(--txt3);max-width:420px;line-height:1.7;font-size:.88rem">Estimate how many blocks you need. Includes 10% waste buffer.</p></div>
+    <div class="cwrap">
+      <div class="rv d1">
+        <label class="clbl" for="clen">Wall Length (meters)</label>
+        <input class="cinp" id="clen" type="number" min="0.1" step="0.1" placeholder="e.g. 12.5">
+        <label class="clbl" for="chgt">Wall Height (meters)</label>
+        <input class="cinp" id="chgt" type="number" min="0.1" step="0.1" placeholder="e.g. 2.4">
+        <label class="clbl" for="ctype">Block Type</label>
+        <select class="cinp" id="ctype"><option value="">Select block type…</option><option>Hollow Block 4"</option><option>Hollow Block 6"</option><option>Hollow Block 8"</option><option>Solid Block 6"</option><option>Solid Block 8"</option></select>
+        <button class="cbtn" id="cbtn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>Calculate Now</button>
+      </div>
+      <div class="cres rv d2" id="cres">
+        <div class="ritem"><div class="rlbl">Wall Area</div><div class="rval" id="rarea">—</div><div class="rsub">square meters</div></div>
+        <div class="ritem"><div class="rlbl">Blocks Needed</div><div class="rval" id="rblk">—</div><div class="rsub">including 10% waste</div></div>
+        <div class="ritem"><div class="rlbl">Mortar Estimate</div><div class="rval" id="rmort">—</div><div class="rsub">kilograms approx.</div></div>
+        <div class="rtip">💡 For precise quantities & pricing: <a href="tel:+256768806665" style="color:var(--amber);font-weight:600">0768-806-665</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI GUIDE -->
+<section id="ai">
+  <div class="aiwrap">
+    <div class="rv"><div class="slbl" style="justify-content:center">Powered by Gemini AI</div><h2 class="stitle" style="text-align:center">Project Guide</h2><p style="margin-top:13px;color:var(--txt3);line-height:1.75;font-size:.9rem">Describe your project and get tailored product recommendations instantly.</p></div>
+    <div class="aibox rv d2">
+      <div class="aitaw"><textarea id="aiin" class="aita" rows="4" placeholder="e.g. I want to build a 3-bedroom house with a perimeter wall and paved driveway…"></textarea></div>
+      <div class="aifoot"><span class="aihint">Ctrl+Enter to send</span><button class="aisend" id="aibtn"><span class="stxt">Get Recommendations</span><div class="spin"></div></button></div>
+      <div class="airsp" id="airsp"><div class="airspin" id="aiout"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="rv" style="text-align:center"><div class="slbl" style="justify-content:center">Customer Reviews</div><h2 class="stitle">What Our Clients Say</h2></div>
+    <div class="tgrid">
+      <div class="tcard rv"><div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><p class="ttxt">"The hollow blocks from REWA are consistently high quality. I've used them on three projects now. Delivery was on time and the team was very helpful."</p><div class="tauth"><div class="tav">JO</div><div><div class="tnm">Joseph Okello</div><div class="trl">Homeowner, Gulu</div></div></div></div>
+      <div class="tcard rv d1"><div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><p class="ttxt">"We used REWA's pavers for our restaurant parking area — they look fantastic! Great quality, competitive prices, and delivered right on time."</p><div class="tauth"><div class="tav">SA</div><div><div class="tnm">Sarah Auma</div><div class="trl">Business Owner, Gulu</div></div></div></div>
+      <div class="tcard rv d2"><div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><p class="ttxt">"As a contractor, I rely on REWA for consistent quality. Their hollow blocks are perfect and customer service is excellent. A trusted partner!"</p><div class="tauth"><div class="tav">DK</div><div><div class="tnm">David Komakech</div><div class="trl">Contractor, N. Uganda</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="rv" style="text-align:center"><div class="slbl" style="justify-content:center">Common Questions</div><h2 class="stitle">FAQ</h2></div>
+    <div class="fwrap">
+      <div class="fit rv"><div class="fq"><span>What block sizes do you offer?</span><span class="fico">+</span></div><div class="fa">We offer hollow blocks in 4", 6", and 8" sizes, and solid blocks in 6" and 8" sizes. All manufactured to international quality standards.</div></div>
+      <div class="fit rv d1"><div class="fq"><span>Do you deliver outside Gulu?</span><span class="fico">+</span></div><div class="fa">Yes! We deliver throughout Northern Uganda. Delivery charges depend on location and order size. Contact us for a custom quote.</div></div>
+      <div class="fit rv d2"><div class="fq"><span>Is there a minimum order?</span><span class="fico">+</span></div><div class="fa">We accommodate orders of all sizes. No strict minimum, but bulk orders receive special pricing.</div></div>
+      <div class="fit rv d3"><div class="fq"><span>How long does delivery take?</span><span class="fico">+</span></div><div class="fa">Most orders are fulfilled within 1–3 business days depending on quantity and availability.</div></div>
+      <div class="fit rv"><div class="fq"><span>What payment methods do you accept?</span><span class="fico">+</span></div><div class="fa">We accept cash, mobile money (MTN & Airtel), and bank transfers. Flexible terms for large orders.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="rv"><div class="slbl">Get in Touch</div><h2 class="stitle">Let's Build Together</h2></div>
+    <div class="cgrid">
+      <div class="rv d1">
+        <div class="cii"><div class="ciico">📍</div><div><div class="cilbl">Location</div><div class="cival">Koro Paida Village, Pageya Parish<br>Laroo-Pece Division, Gulu City, Uganda</div></div></div>
+        <div class="cii"><div class="ciico">📞</div><div><div class="cilbl">Phone</div><div class="cival"><a href="tel:+256768806665">0768-806-665</a><br><a href="tel:+256753839787">0753-839-787</a></div></div></div>
+        <div class="cii"><div class="ciico">✉️</div><div><div class="cilbl">Email</div><div class="cival"><a href="mailto:info@rewaconstruction.com">info@rewaconstruction.com</a></div></div></div>
+        <div class="cii"><div class="ciico">🕐</div><div><div class="cilbl">Hours</div><div class="cival">Mon–Sat: 7:30 AM – 6:00 PM<br>Sunday: 8:00 AM – 5:00 PM</div></div></div>
+        <div class="cacts">
+          <a href="tel:+256768806665" class="btn bpri">📞 Call Now</a>
+          <a href="https://wa.me/256768806665" target="_blank" class="btn" style="background:rgba(37,211,102,.1);border:1.5px solid rgba(37,211,102,.3);color:#10B981">💬 WhatsApp</a>
+        </div>
+        <div class="mapw"><iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3985.2995167101867!2d32.30538657496947!3d2.7271799972501474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMsKwNDMnMzcuOSJOIDMywrAxOCcyOC43IkU!5e0!3m2!1sen!2sug!4v1760018940167!5m2!1sen!2sug" width="100%" height="210" style="border:0;display:block" allowfullscreen loading="lazy"></iframe></div>
+      </div>
+      <div class="rv d2">
+        <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.7rem;color:var(--txt);margin-bottom:22px">Send a Message</h3>
+        <form id="cform">
+          <div class="fgrp"><label class="flbl" for="fn">Your Name</label><input class="fctrl" id="fn" type="text" placeholder="e.g. John Ochieng" required></div>
+          <div class="fgrp"><label class="flbl" for="fp">Phone Number</label><input class="fctrl" id="fp" type="tel" placeholder="e.g. 0768-000-000"></div>
+          <div class="fgrp"><label class="flbl" for="fpr">Product Interest</label><select class="fctrl" id="fpr"><option value="">Select a product…</option><option>Hollow Blocks</option><option>Solid Blocks</option><option>Interlocking Pavers</option><option>Kerb Stones</option><option>Multiple Products</option></select></div>
+          <div class="fgrp"><label class="flbl" for="fm">Message</label><textarea class="fctrl" id="fm" rows="4" placeholder="Tell us about your project…" required></textarea></div>
+          <button type="submit" class="fsub">Send via WhatsApp →</button>
+          <div class="fok" id="fok">✅ Opening WhatsApp… We'll reply shortly!</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fin">
+    <div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:1.05rem;color:var(--txt2)">REWA Construction UG LTD</div>
+      <div class="fcopy">Gulu City, Uganda · Est. 2019 · © 2025 All rights reserved.</div>
+    </div>
+    <div class="flinks">
+      <a href="https://www.tiktok.com/@rewaconstruction" target="_blank">TikTok</a>
+      <a href="https://wa.me/256768806665" target="_blank">WhatsApp</a>
+      <a href="mailto:info@rewaconstruction.com">Email</a>
+      <a href="admin.html" class="admlnk">⚙️ Admin</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ===========================================
+// ANA FONKSİYONLAR
+// ===========================================
+
+// ── THEME ──────────────────────────────────────
+const html=document.documentElement;
+function applyTheme(t){
+  html.setAttribute('data-theme',t);
+  localStorage.setItem('rewa-theme',t);
+  const ico=t==='dark'?'☀️':'🌙';
+  document.querySelectorAll('#tbtn,#tbtnm').forEach(b=>b.textContent=ico);
+}
+applyTheme(localStorage.getItem('rewa-theme')||'dark');
+document.querySelectorAll('#tbtn,#tbtnm').forEach(b=>{
+  b.addEventListener('click',()=>applyTheme(html.getAttribute('data-theme')==='dark'?'light':'dark'));
+});
+
+// ── CURSOR ─────────────────────────────────────
+const cur=document.getElementById('cur'),ring=document.getElementById('curring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.transform=`translate(${mx}px,${my}px) translate(-50%,-50%)`});
+(function raf(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.transform=`translate(${rx}px,${ry}px) translate(-50%,-50%)`;requestAnimationFrame(raf)})();
+
+// ── SCROLL ─────────────────────────────────────
+const sbar=document.getElementById('sbar'),nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{
+  sbar.style.width=(scrollY/(document.body.scrollHeight-innerHeight)*100)+'%';
+  nav.classList.toggle('scrolled',scrollY>50);
+});
+
+// ── MOBILE MENU ────────────────────────────────
+const hbg=document.getElementById('hbg'),mobm=document.getElementById('mobm');
+document.getElementById('tbtnm').style.display='flex';
+hbg.addEventListener('click',()=>{hbg.classList.toggle('open');mobm.classList.toggle('open')});
+mobm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{hbg.classList.remove('open');mobm.classList.remove('open')}));
+
+// ── SCROLL REVEAL ──────────────────────────────
+const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')}),{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+
+// ── COUNTER ────────────────────────────────────
+const co=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;
+  const el=e.target,tgt=+el.dataset.count;let c=0;
+  const t=setInterval(()=>{c=Math.min(c+tgt/60,tgt);el.textContent=Math.round(c)+(tgt>=100?'+':'');if(c>=tgt)clearInterval(t)},25);
+  co.unobserve(el);
+}),{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el=>co.observe(el));
+
+// ── FAQ ────────────────────────────────────────
+document.querySelectorAll('.fq').forEach(q=>{
+  q.addEventListener('click',()=>{
+    const it=q.parentElement,was=it.classList.contains('open');
+    document.querySelectorAll('.fit').forEach(i=>i.classList.remove('open'));
+    if(!was)it.classList.add('open');
+  });
+});
+
+// ── CALCULATOR ─────────────────────────────────
+document.getElementById('cbtn').addEventListener('click',()=>{
+  const l=+document.getElementById('clen').value;
+  const h=+document.getElementById('chgt').value;
+  const tp=document.getElementById('ctype').value;
+  if(!l||!h||!tp){alert('Please fill in all fields!');return}
+  if(l<=0||h<=0){alert('Values must be greater than 0!');return}
+  const area=l*h,blk=Math.ceil(area/0.08*1.1),mort=Math.ceil(area*10);
+  document.getElementById('rarea').textContent=area.toFixed(2);
+  document.getElementById('rblk').textContent=blk.toLocaleString();
+  document.getElementById('rmort').textContent=mort.toLocaleString();
+  const res=document.getElementById('cres');
+  res.classList.add('show');
+  res.scrollIntoView({behavior:'smooth',block:'nearest'});
+});
+
+// ── AI ─────────────────────────────────────────
+const aibtn=document.getElementById('aibtn');
+const aiin=document.getElementById('aiin');
+const airsp=document.getElementById('airsp');
+const aiout=document.getElementById('aiout');
+async function runAI(){
+  const p=aiin.value.trim();if(!p){aiin.focus();return}
+  aibtn.classList.add('loading');aibtn.disabled=true;airsp.classList.remove('show');
+  try{
+    const key='AIzaSyD2jDKqH7LKkXbqrYHlYk8DrzWJc5WZp7g';
+    const prompt=`You are a construction expert at REWA Construction UG LTD, Gulu Uganda. Recommend products from: Hollow Blocks (4",6",8"), Solid Blocks (6",8"), Interlocking Pavers (40mm,50mm,60mm), Kerb Stones. Be concise, use **bold** for product names. Max 160 words. Project: ${p}`;
+    const r=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${key}`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{temperature:.6,maxOutputTokens:320}})});
+    const d=await r.json();
+    let txt=d.candidates?.[0]?.content?.parts?.[0]?.text;
+    if(!txt)throw 0;
+    txt=txt.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/\n\n/g,'<br><br>').replace(/\n/g,'<br>');
+    aiout.innerHTML=`<p>${txt}</p><p style="margin-top:13px;font-size:.76rem;color:var(--txt3)">📞 Ready to order? <a href="tel:+256768806665" style="color:var(--amber);font-weight:600">0768-806-665</a></p>`;
+  }catch{
+    const t=p.toLowerCase();let r=[];
+    if(/wall|fence|perimeter/.test(t))r.push('<strong>Solid Blocks 8"</strong> for perimeter walls · <strong>Kerb Stones</strong> for the base.');
+    if(/house|home|building/.test(t))r.push('<strong>Solid Blocks 8"</strong> external walls · <strong>Hollow Blocks 6"</strong> internal · <strong>Hollow 4"</strong> partitions.');
+    if(/driveway|parking|car/.test(t))r.push('<strong>Heavy-Duty Pavers 60mm</strong> for vehicle traffic · <strong>Kerb Stones</strong> for edges.');
+    if(/patio|garden|walkway|path/.test(t))r.push('<strong>Pavers 50mm</strong> for patios & paths · <strong>Kerb Stones</strong> for borders.');
+    if(!r.length)r.push('Contact our team for a tailored recommendation. <strong>Hollow Blocks</strong> and <strong>Pavers</strong> are popular starting points.');
+    aiout.innerHTML=`<p>${r.join('<br><br>')}</p><p style="margin-top:13px;font-size:.76rem;color:var(--txt3)">📞 <a href="tel:+256768806665" style="color:var(--amber);font-weight:600">0768-806-665</a></p>`;
+  }
+  airsp.classList.add('show');aibtn.classList.remove('loading');aibtn.disabled=false;
+}
+aibtn.addEventListener('click',runAI);
+aiin.addEventListener('keydown',e=>{if(e.ctrlKey&&e.key==='Enter')runAI()});
+
+// ── CONTACT FORM ───────────────────────────────
+document.getElementById('cform').addEventListener('submit',function(e){
+  e.preventDefault();
+  const n=document.getElementById('fn').value;
+  const ph=document.getElementById('fp').value;
+  const pr=document.getElementById('fpr').value;
+  const m=document.getElementById('fm').value;
+  const msg=encodeURIComponent(`Hello REWA Construction!\n\nName: ${n}\nPhone: ${ph}\nProduct: ${pr}\nMessage: ${m}`);
+  window.open(`https://wa.me/256768806665?text=${msg}`,'_blank');
+  document.getElementById('fok').classList.add('show');
+  this.reset();
+  setTimeout(()=>document.getElementById('fok').classList.remove('show'),5000);
+});
+
+// ===========================================
+// ADMIN PANELİ ENTEGRASYONU - DB FONKSİYONLARI
+// ===========================================
+
+// Veritabanı işlemleri
+const DB = {
+    get: function(key, defaultValue) {
+        try {
+            const item = localStorage.getItem('rewa_' + key);
+            return item ? JSON.parse(item) : defaultValue;
+        } catch (e) {
+            console.log('DB okuma hatası:', e);
+            return defaultValue;
+        }
+    },
+    set: function(key, value) {
+        try {
+            localStorage.setItem('rewa_' + key, JSON.stringify(value));
+            return true;
+        } catch (e) {
+            console.log('DB yazma hatası:', e);
+            return false;
+        }
+    }
+};
+
+// Varsayılan veriler
+const DEFAULTS = {
+    products: [
+        {id:1, name:'Hollow Blocks', badge:'Most Popular', sizes:'4" · 6" · 8"', desc:'Lightweight yet durable. Perfect for internal walls, partitions and non-load-bearing structures.', img:'https://hockchuanseng.com/cdn/shop/files/CementHollowBlocks_8cc94174-8102-45ea-abc0-0b2b91d3a364.jpg?v=1721977628&width=600'},
+        {id:2, name:'Solid Blocks', badge:'Max Strength', sizes:'6" · 8"', desc:'Maximum strength for foundations, perimeter walls and all load-bearing structures.', img:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop'},
+        {id:3, name:'Interlocking Pavers', badge:'Driveways & Patios', sizes:'40mm · 50mm · 60mm', desc:'Beautiful, durable surface solutions for driveways, parking lots, patios and walkways.', img:'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=800&auto=format&fit=crop'},
+        {id:4, name:'Kerb Stones', badge:'Edges & Borders', sizes:'Standard & Heavy Duty', desc:'Define edges cleanly. Ideal for road borders, driveway edging and garden boundaries.', img:'https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=800&auto=format&fit=crop'}
+    ],
+    testimonials: [
+        {id:1, name:'Joseph Okello', ini:'JO', role:'Homeowner, Gulu', stars:5, txt:'The hollow blocks from REWA are consistently high quality. I\'ve used them on three projects now. Delivery was on time and the team was very helpful.'},
+        {id:2, name:'Sarah Auma', ini:'SA', role:'Business Owner, Gulu', stars:5, txt:'We used REWA\'s pavers for our restaurant parking area — they look fantastic! Great quality, competitive prices, and delivered right on time.'},
+        {id:3, name:'David Komakech', ini:'DK', role:'Contractor, N. Uganda', stars:5, txt:'As a contractor, I rely on REWA for consistent quality. Their hollow blocks are perfect and customer service is excellent. A trusted partner!'}
+    ],
+    faq: [
+        {id:1, q:'What block sizes do you offer?', a:'We offer hollow blocks in 4", 6", and 8" sizes, and solid blocks in 6" and 8" sizes. All manufactured to international quality standards.'},
+        {id:2, q:'Do you deliver outside Gulu?', a:'Yes! We deliver throughout Northern Uganda. Delivery charges depend on location and order size. Contact us for a custom quote.'},
+        {id:3, q:'Is there a minimum order?', a:'We accommodate orders of all sizes. No strict minimum, but bulk orders receive special pricing.'},
+        {id:4, q:'How long does delivery take?', a:'Most orders are fulfilled within 1–3 business days depending on quantity and availability.'},
+        {id:5, q:'What payment methods do you accept?', a:'We accept cash, mobile money (MTN & Airtel), and bank transfers. Flexible terms for large orders.'}
+    ],
+    hero: {
+        tag: "Gulu City's Premier Concrete Supplier",
+        h1: "BUILD",
+        h2: "STRONG.",
+        h3: "Build Right.",
+        sub: "REWA Construction UG LTD supplies premium hollow blocks, solid blocks, pavers, and kerb stones to contractors and homeowners across Northern Uganda.",
+        s1n: 500,
+        s1l: "Projects Done",
+        s2n: 4,
+        s2l: "Product Lines",
+        s3n: 7,
+        s3l: "Days a Week"
+    },
+    contact: {
+        p1: '0768-806-665',
+        p2: '0753-839-787',
+        email: 'info@rewaconstruction.com',
+        addr1: 'Koro Paida Village, Pageya Parish',
+        addr2: 'Laroo-Pece Division, Gulu City, Uganda',
+        wday: 'Mon–Sat: 7:30 AM – 6:00 PM',
+        wend: 'Sunday: 8:00 AM – 5:00 PM',
+        wa: '256768806665',
+        tiktok: '@rewaconstruction'
+    }
+};
+
+// ===========================================
+// İÇERİK YÜKLEME FONKSİYONLARI
+// ===========================================
+
+// Hero içeriğini yükle - DÜZELTİLDİ
+function loadHero() {
+    const hero = DB.get('hero', DEFAULTS.hero);
+    
+    // Hero tag
+    const htag = document.querySelector('.htag');
+    if (htag) htag.innerHTML = `<span class="dot"></span>${hero.tag}`;
+    
+    // Hero başlık
+    const hh1 = document.querySelector('.hh1');
+    if (hh1) hh1.innerHTML = `${hero.h1}<br><span class="a">${hero.h2}</span><br><span class="i">${hero.h3}</span>`;
+    
+    // Hero alt metin
+    const hsub = document.querySelector('.hsub');
+    if (hsub) hsub.textContent = hero.sub;
+    
+    // STATS - KESİN ÇÖZÜM
+    const hstats = document.querySelector('.hstats');
+    if (hstats) {
+        hstats.innerHTML = `
+            <div><div class="stn" data-count="${hero.s1n}">${hero.s1n}</div><div class="stl">${hero.s1l}</div></div>
+            <div><div class="stn" data-count="${hero.s2n}">${hero.s2n}</div><div class="stl">${hero.s2l}</div></div>
+            <div><div class="stn" data-count="${hero.s3n}">${hero.s3n}</div><div class="stl">${hero.s3l}</div></div>
+        `;
+    }
+}
+
+// Ürünleri yükle
+function loadProducts() {
+    const products = DB.get('products', DEFAULTS.products);
+    const grid = document.getElementById('pgrid');
+    if (!grid) return;
+    
+    grid.innerHTML = products.map(p => `
+        <div class="pcard rv">
+            <div class="pimgw">
+                <img src="${p.img || DEFAULTS.products[0].img}" alt="${p.name}" loading="lazy">
+                <span class="pbdg">${p.badge || 'Standart'}</span>
+            </div>
+            <div class="pbody">
+                <div class="pname">${p.name}</div>
+                <div class="psizes">${p.sizes || 'Çeşitli boyutlar'}</div>
+                <div class="pdesc">${p.desc || ''}</div>
+                <span class="parrow">Detaylar <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+            </div>
+        </div>
+    `).join('');
+}
+
+// Testimonial'ları yükle
+function loadTestimonials() {
+    const testimonials = DB.get('testimonials', DEFAULTS.testimonials);
+    const grid = document.querySelector('.tgrid');
+    if (!grid) return;
+    
+    grid.innerHTML = testimonials.map(t => `
+        <div class="tcard rv">
+            <div class="stars">${'★'.repeat(t.stars)}${'☆'.repeat(5-t.stars)}</div>
+            <p class="ttxt">"${t.txt}"</p>
+            <div class="tauth">
+                <div class="tav">${t.ini || t.name.substring(0,2).toUpperCase()}</div>
+                <div>
+                    <div class="tnm">${t.name}</div>
+                    <div class="trl">${t.role || ''}</div>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+// FAQ'ları yükle
+function loadFaq() {
+    const faqs = DB.get('faq', DEFAULTS.faq);
+    const wrap = document.querySelector('.fwrap');
+    if (!wrap) return;
+    
+    wrap.innerHTML = faqs.map((f, index) => `
+        <div class="fit rv">
+            <div class="fq">
+                <span>${f.q}</span>
+                <span class="fico">+</span>
+            </div>
+            <div class="fa">${f.a}</div>
+        </div>
+    `).join('');
+    
+    // FAQ tıklama olaylarını yeniden ekle
+    document.querySelectorAll('.fq').forEach(q => {
+        q.addEventListener('click', function() {
+            const it = this.parentElement;
+            const was = it.classList.contains('open');
+            document.querySelectorAll('.fit').forEach(i => i.classList.remove('open'));
+            if (!was) it.classList.add('open');
+        });
+    });
+}
+
+// İletişim bilgilerini yükle
+function loadContact() {
+    const contact = DB.get('contact', DEFAULTS.contact);
+    
+    // Telefon numaralarını güncelle
+    document.querySelectorAll('.cival a[href^="tel:"]').forEach((el, i) => {
+        if (i === 0) {
+            el.href = `tel:${contact.p1}`;
+            el.textContent = contact.p1;
+        } else if (i === 1) {
+            el.href = `tel:${contact.p2}`;
+            el.textContent = contact.p2;
+        }
+    });
+    
+    // Email'i güncelle
+    const emailLink = document.querySelector('.cival a[href^="mailto:"]');
+    if (emailLink) {
+        emailLink.href = `mailto:${contact.email}`;
+        emailLink.textContent = contact.email;
+    }
+    
+    // WhatsApp linkini güncelle
+    const waLink = document.querySelector('.wa');
+    if (waLink) waLink.href = `https://wa.me/${contact.wa}?text=Hello%20REWA%20Construction!`;
+    
+    // WhatsApp butonunu güncelle
+    const waButton = document.querySelector('.cacts a[href*="wa.me"]');
+    if (waButton) waButton.href = `https://wa.me/${contact.wa}`;
+}
+
+// Tüm içeriği yenile
+function refreshAll() {
+    loadHero();
+    loadProducts();
+    loadTestimonials();
+    loadFaq();
+    loadContact();
+    
+    // Scroll reveal'ı yeniden başlat
+    setTimeout(() => {
+        document.querySelectorAll('.rv').forEach(el => {
+            el.classList.remove('vis');
+            ro.observe(el);
+        });
+        
+        // Counter'ları yeniden başlat
+        document.querySelectorAll('[data-count]').forEach(el => {
+            co.observe(el);
+        });
+    }, 100);
+}
+
+// ===========================================
+// BAŞLANGIÇ
+// ===========================================
+
+// Sayfa yüklendiğinde çalıştır
+window.addEventListener('load', function() {
+    refreshAll();
+});
+
+// Admin panelinde değişiklik olursa anlık güncelle
+window.addEventListener('storage', function(e) {
+    if (e.key && e.key.startsWith('rewa_')) {
+        refreshAll();
+    }
+});
+
+// Eğer hiç veri yoksa, varsayılanları kaydet
+if (!localStorage.getItem('rewa_products')) {
+    DB.set('products', DEFAULTS.products);
+    DB.set('testimonials', DEFAULTS.testimonials);
+    DB.set('faq', DEFAULTS.faq);
+    DB.set('hero', DEFAULTS.hero);
+    DB.set('contact', DEFAULTS.contact);
+}
+</script>
+</body>
+</html>
